@@ -1,0 +1,82 @@
+<div class="login-card">
+  <header class="login-card__brand">
+    <div class="login-card__logo">
+      <mat-icon>ac_unit</mat-icon>
+    </div>
+    <span class="login-card__brand-name">WinterSport</span>
+    <span class="login-card__brand-tag">Your winter statistics from Strava</span>
+  </header>
+
+  <div class="login-card__intro">
+    <div class="login-card__icon-badge">
+      <mat-icon>downhill_skiing</mat-icon>
+    </div>
+    <h1 class="login-card__title">Your winter season, measured.</h1>
+    <p class="login-card__subtitle">
+      Sign in to discover your skiing, cross-country skiing, and other winter activity stats.
+    </p>
+  </div>
+
+  <button
+    mat-flat-button
+    class="login-card__strava-btn"
+    type="button"
+    (click)="continueWithStrava()">
+    <mat-icon>directions_run</mat-icon>
+    Continue with Strava
+  </button>
+
+  <div class="login-card__divider">
+    <span></span>
+    <p>or</p>
+    <span></span>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-card__form">
+    <mat-form-field appearance="outline" class="login-card__field">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="you@example.com" />
+      @if (loginForm.controls.email.hasError('required') && loginForm.controls.email.touched) {
+        <mat-error>Enter your email address</mat-error>
+      }
+      @if (loginForm.controls.email.hasError('email') && loginForm.controls.email.touched) {
+        <mat-error>Invalid email address</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="login-card__field">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+        placeholder="••••••••" />
+      <button
+        mat-icon-button
+        matSuffix
+        type="button"
+        (click)="togglePasswordVisibility($event)"
+        [attr.aria-label]="'Show password'"
+        [attr.aria-pressed]="!hidePassword">
+        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      @if (loginForm.controls.password.hasError('required') && loginForm.controls.password.touched) {
+        <mat-error>Enter a password</mat-error>
+      }
+    </mat-form-field>
+
+    <button mat-stroked-button type="submit" class="login-card__submit-btn">
+      Log in
+    </button>
+  </form>
+
+  <p class="login-card__register-hint">
+    New here?
+    <a (click)="goToRegister()">Sign up</a>
+  </p>
+
+  <footer class="login-card__footer">
+    <mat-icon>lock</mat-icon>
+    <span>Secure OAuth connection with Strava</span>
+  </footer>
+</div>
