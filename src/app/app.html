@@ -1,1 +1,6 @@
-<app-auth-page></app-auth-page>
+@if (isAuthComponentReady) {
+  <app-auth-page></app-auth-page>
+} @else {
+  <app-dashboard></app-dashboard>
+}
+

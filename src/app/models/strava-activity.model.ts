@@ -1,0 +1,63 @@
+export interface StravaActivity {
+  id: number;
+  resource_state: number;
+  external_id: string | null;
+  upload_id: number | null;
+
+  athlete: {
+    id: number;
+    resource_state: number;
+  };
+
+  name: string;
+  distance: number;
+  moving_time: number;
+  elapsed_time: number;
+  total_elevation_gain: number;
+
+  type: string;
+  sport_type: string;
+
+  start_date: string;
+  start_date_local: string;
+  timezone: string;
+  utc_offset: number;
+
+  achievement_count: number;
+  kudos_count: number;
+  comment_count: number;
+  athlete_count: number;
+  photo_count: number;
+
+  map: {
+    id: string;
+    polyline: string | null;
+    resource_state: number;
+  };
+
+  trainer: boolean;
+  commute: boolean;
+  manual: boolean;
+  private: boolean;
+  flagged: boolean;
+
+  gear_id: string | null;
+  from_accepted_tag: boolean | null;
+
+  average_speed: number;
+  max_speed: number;
+
+  device_watts: boolean;
+  has_heartrate: boolean;
+
+  pr_count: number;
+  total_photo_count: number;
+  has_kudoed: boolean;
+
+  workout_type: number | null;
+
+  description: string | null;
+  calories: number;
+
+  segment_efforts: unknown[];
+}
