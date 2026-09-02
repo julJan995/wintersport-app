@@ -1,4 +1,3 @@
-
 @for (activity of activities; track activity.id) {
-  <p>{{ activity.name }} - {{ activity.distance }}</p>
+  <p>{{ activity.name }} - {{ activity.distance | distance }} - {{ activity.elapsed_time | duration}}</p>
 }
