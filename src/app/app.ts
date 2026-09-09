@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { AuthPage } from './features/auth-page/auth-page';
-import { Dashboard } from './features/dashboard/dashboard';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
-  imports: [AuthPage, Dashboard],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  isAuthComponentReady = false;
 }

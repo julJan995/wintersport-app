@@ -21,9 +21,9 @@
     mat-flat-button
     class="login-card__strava-btn"
     type="button"
-    (click)="continueWithStrava()">
+    (click)="onConnectWithStrava()">
     <mat-icon>directions_run</mat-icon>
-    Continue with Strava
+      Continue with Strava
   </button>
 
   <div class="login-card__divider">
@@ -32,8 +32,12 @@
     <span></span>
   </div>
 
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-card__form">
-    <mat-form-field appearance="outline" class="login-card__field">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="login-card__form"
+  >
+    <mat-form-field appearance="fill" class="login-card__field">
       <mat-label>E-mail</mat-label>
       <input matInput type="email" formControlName="email" placeholder="you@example.com" />
       @if (loginForm.controls.email.hasError('required') && loginForm.controls.email.touched) {
@@ -44,7 +48,7 @@
       }
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="login-card__field">
+    <mat-form-field appearance="fill" class="login-card__field">
       <mat-label>Password</mat-label>
       <input
         matInput
@@ -65,7 +69,11 @@
       }
     </mat-form-field>
 
-    <button mat-stroked-button type="submit" class="login-card__submit-btn">
+    <button
+      mat-stroked-button
+      type="submit"
+      class="login-card__submit-btn"
+    >
       Log in
     </button>
   </form>
@@ -80,6 +88,6 @@
     <span>Secure OAuth connection with Strava</span>
   </footer>
 </div>
-<div class="ski-background">
 
+<div class="ski-background">
 </div>

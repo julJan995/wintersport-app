@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { StravaAuthService } from '../../services/strava-auth';
 
 @Component({
   selector: 'app-auth-page',
@@ -17,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
   ],
   templateUrl: './auth-page.html',
-  styleUrl: './auth-page.scss',
+  styleUrl: './auth-page.scss'
 })
 export class AuthPage {
   private fb = inject(FormBuilder);
@@ -28,16 +29,10 @@ export class AuthPage {
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
-  continueWithStrava(): void {
-    // TO DO:
-    const params = new URLSearchParams({
-      // client_id: environment.strava.clientId,
-      // redirect_uri: environment.strava.redirectUri,
-      response_type: 'code',
-      approval_prompt: 'auto',
-      scope: 'read,activity:read_all',
-    });
-    // window.location.href = `https://www.strava.com/oauth/authorize?${params.toString()}`;
+  private readonly stravaAuth = inject(StravaAuthService);
+
+  onConnectWithStrava(): void {
+    this.stravaAuth.connectWithStrava();
   }
 
   togglePasswordVisibility(event: MouseEvent): void {
