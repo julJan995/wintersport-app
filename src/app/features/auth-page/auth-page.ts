@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { StravaAuthService } from '../../services/strava-auth';
+import { Navbar } from '../../layout/navbar/navbar';
 
 @Component({
   selector: 'app-auth-page',
@@ -16,6 +17,7 @@ import { StravaAuthService } from '../../services/strava-auth';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    Navbar
   ],
   templateUrl: './auth-page.html',
   styleUrl: './auth-page.scss'

@@ -5,6 +5,7 @@ import { DurationPipe } from '../../shared/pipes/duration.pipe';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Navbar } from '../../layout/navbar/navbar';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    Navbar
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
