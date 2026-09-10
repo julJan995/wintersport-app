@@ -1,0 +1,41 @@
+@use '../../../styles/colors' as colors;
+@use '../../../styles/spacing' as spacing;
+
+.app-navbar {
+  display: flex;
+  align-items: center;
+  gap: spacing.$space-1;
+  padding: spacing.$space-2 spacing.$space-3;
+  border-bottom: 0.5px solid colors.$navy-border-soft;
+
+  &__logo {
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: spacing.$radius-sm;
+    background: colors.$strava-orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    mat-icon {
+      color: colors.$text-primary;
+      font-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__brand-name {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: colors.$text-primary;
+  }
+
+  &__brand-tag {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: colors.$text-primary;
+  }
+}
