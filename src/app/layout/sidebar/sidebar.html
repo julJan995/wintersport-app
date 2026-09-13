@@ -1,0 +1,11 @@
+<div class="app-sidebar">
+  @for (sidebarElement of sidebarElements; track sidebarElement.id) {
+    <div class="app-sidebar__item"
+         [routerLink]="sidebarElement.route"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+      <mat-icon>{{ sidebarElement.icon }}</mat-icon>
+      <p>{{ sidebarElement.name }}</p>
+    </div>
+  }
+</div>

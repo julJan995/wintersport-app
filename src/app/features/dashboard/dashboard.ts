@@ -6,6 +6,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Navbar } from '../../layout/navbar/navbar';
+import { Sidebar } from '../../layout/sidebar/sidebar';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +19,8 @@ import { Navbar } from '../../layout/navbar/navbar';
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    Navbar
+    Navbar,
+    Sidebar
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
